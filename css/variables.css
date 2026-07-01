@@ -1,0 +1,35 @@
+/* ================================================
+   VARIABLES GLOBALES — Correa Grieco
+   ================================================ */
+:root {
+  /* Colores */
+  --color-bg:         #0a0a0a;
+  --color-bg-alt:     #111;
+  --color-surface:    #141313;
+  --color-border:     #1e1e1e;
+  --color-border-alt: #2e2e2e;
+
+  --color-gold:       #c9a96e;
+  --color-gold-light: #e8d5a8;
+  --color-white:      #e8e0d0;
+  --color-grey:       #aaa;
+  --color-grey-dark:  #555;
+  --color-grey-muted: #444;
+
+  --color-mp-blue:    #009ee3;
+  --color-wa-green:   #25d366;
+
+  /* Tipografía */
+  --font-serif:  'Cormorant Garamond', serif;
+  --font-sans:   'Jost', sans-serif;
+  --font-alt:    'Montserrat', sans-serif;
+
+  /* Espaciado */
+  --gap-sm:   8px;
+  --gap-md:   24px;
+  --gap-lg:   48px;
+  --gap-xl:   80px;
+
+  /* Transiciones */
+  --transition: 0.3s ease;
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Correa Grieco — Bodega familiar de Mendoza. Vinos de autor con identidad propia." />
+  <title>Correa Grieco — Bodega Familiar</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/tienda.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '999249245799537');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=999249245799537&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('WkQTbIxva970kzMfJ');</script>
+</head>
+
+<body>
+
+  <!-- ==============================
+       MOBILE NAV OVERLAY
+       ============================== -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" onclick="closeMobileNav()">✕</button>
+    <a href="#inicio"    onclick="closeMobileNav()">Inicio</a>
+    <a href="#historia"  onclick="closeMobileNav()">Nuestra Historia</a>
+    <a href="#vinos"     onclick="closeMobileNav()">Vinos</a>
+    <a href="#eventos"   onclick="closeMobileNav()">Eventos</a>
+    <a href="#tienda"    onclick="closeMobileNav()">Tienda</a>
+    <a href="#contacto"  onclick="closeMobileNav()">Contacto</a>
+  </div>
+
+  <!-- ==============================
+       HEADER
+       ============================== -->
+  <header class="header">
+    <a href="#inicio" class="header__logo">
+      <span class="header__logo-text">CORREA<br>GRIECO<br><small style="font-size:8px;letter-spacing:.3em;color:#555;">HERENCIA FAMILIAR</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#historia">Nuestra Historia</a>
+      <a href="#vinos">Vinos</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="header__burger" onclick="openMobileNav()" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ==============================
+       HERO — INICIO
+       ============================== -->
+  <section id="inicio">
+    <div class="hero__bg"></div>
+    <div class="hero__grain"></div>
+    <div class="hero__content">
+      <p class="hero__subtitle reveal">Mendoza · Argentina</p>
+      <h1 class="hero__title reveal">Correa<br>Grieco</h1>
+      <a href="#vinos" class="btn-primary reveal">
+        Descubrir colección
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+          <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==============================
+       HISTORIA
+       ============================== -->
+  <section id="historia">
+    <div class="historia__img reveal">
+      <img src="img/eventos/vinedo.jpg" alt="Viñedo Correa Grieco" />
+    </div>
+    <div class="historia__text">
+      <div class="section-eyebrow reveal">Nuestra Historia</div>
+      <h2 class="section-title reveal">Una familia,<br>un vino,<br>una tierra.</h2>
+      <p class="section-text reveal">
+        Correa Grieco nació del amor por la tierra mendocina y la convicción de que el vino es mucho más que una bebida: es identidad, es herencia, es el tiempo concentrado en cada botella.
+      </p>
+      <p class="section-text reveal" style="margin-top:1rem;">
+        Elaboramos vinos de autor con uvas propias, respetando los tiempos naturales de cada variedad y apostando siempre a la expresión auténtica del terruño.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==============================
+       VINOS
+       ============================== -->
+  <section id="vinos">
+    <div class="section-eyebrow reveal">Colección</div>
+    <h2 class="section-title reveal">Nuestros Vinos</h2>
+    <div class="vinos__grid">
+      <div class="vino-card reveal">
+        <img src="img/Productos/malbec.png" alt="Malbec Correa Grieco" />
+        <div class="vino-card__label">Malbec</div>
+      </div>
+      <div class="vino-card reveal">
+        <img src="img/Productos/cabfranc.png" alt="Cabernet Franc Correa Grieco" />
+        <div class="vino-card__label">Cabernet Franc</div>
+      </div>
+      <div class="vino-card reveal">
+        <img src="img/Productos/chardonnay.png" alt="Chardonnay Correa Grieco" />
+        <div class="vino-card__label">Chardonnay</div>
+      </div>
+      <div class="vino-card reveal">
+        <img src="img/Productos/tannat.png" alt="Tannat Correa Grieco" />
+        <div class="vino-card__label">Tannat</div>
+      </div>
+      <div class="vino-card reveal">
+        <img src="img/Productos/bonarda.png" alt="Bonarda / Petit Verdot Correa Grieco" />
+        <div class="vino-card__label">Bonarda / Petit Verdot</div>
+      </div>
+      <div class="vino-card reveal">
+        <img src="img/Productos/tardio.png" alt="Cosecha Tardío Correa Grieco" />
+        <div class="vino-card__label">Cosecha Tardío</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       EVENTOS
+       ============================== -->
+  <section id="eventos">
+    <div class="section-eyebrow reveal">Presencia</div>
+    <h2 class="section-title reveal">Nuestros Eventos</h2>
+    <p class="eventos__intro reveal">Compartimos nuestros vinos en ferias, desfiles, degustaciones y encuentros especiales. Cada evento es una oportunidad de conectar con quienes aman el buen vino.</p>
+    <div class="eventos__carousel reveal">
+      <div class="eventos__viewport">
+        <div class="eventos__track" id="evTrack">
+          <div class="ev-slide"><img src="img/eventos/desfile1.jpg" alt="Desfile Correa Grieco" /></div>
+          <div class="ev-slide"><img src="img/eventos/cata.jpg" alt="Cata Correa Grieco" /></div>
+          <div class="ev-slide"><img src="img/eventos/salon.jpg" alt="Evento de gala Correa Grieco" /></div>
+          <div class="ev-slide"><img src="img/eventos/gala.jpg" alt="Evento Correa Grieco" /></div>
+          <div class="ev-slide"><img src="img/eventos/desfile2.jpg" alt="Desfile Correa Grieco" /></div>
+          <div class="ev-slide"><img src="img/eventos/casa.jpg" alt="Casa Correa Grieco" /></div>
+          <div class="ev-slide"><img src="img/eventos/cata-jardin.jpg" alt="Cata en el jardín Correa Grieco" /></div>
+        </div>
+        <button class="ev-nav ev-prev" onclick="evMove(-1)" aria-label="Anterior">‹</button>
+        <button class="ev-nav ev-next" onclick="evMove(1)" aria-label="Siguiente">›</button>
+      </div>
+      <div class="ev-dots" id="evDots"></div>
+    </div>
+
+    <div class="eventos__cards reveal">
+      <div class="evento-item">
+        <div class="evento-eyebrow">Pinamar · Polo</div>
+        <div class="evento-title">Polo – Pinamar</div>
+        <p class="evento-text">Participamos en jornadas de polo, acompañando recepciones donde nuestros vinos formaron parte del encuentro entre deporte, tradición y vida social. Un entorno natural para compartir nuestra propuesta.</p>
+      </div>
+      <div class="evento-item">
+        <div class="evento-eyebrow">Pinamar · Moda</div>
+        <div class="evento-title">Pinamar Moda Look</div>
+        <p class="evento-text">Este verano fuimos parte de uno de los eventos más destacados de la temporada. Nuestros vinos acompañaron una experiencia donde la moda, el estilo y las tendencias fueron protagonistas.</p>
+      </div>
+      <div class="evento-item">
+        <div class="evento-eyebrow">Pilar · Golf</div>
+        <div class="evento-title">Torneos de Golf – Pilar</div>
+        <p class="evento-text">Estuvimos presentes en torneos realizados en un country de Pilar, integrando nuestros vinos a un ambiente relajado y sofisticado, ideal para disfrutar después de cada jornada.</p>
+      </div>
+      <div class="evento-item">
+        <div class="evento-eyebrow">Cariló · Diseño</div>
+        <div class="evento-title">Cariló Designers</div>
+        <p class="evento-text">Formamos parte de un evento que fusiona moda, diseño y tendencias. Nuestros vinos acompañaron un desfile donde el estilo y la creatividad fueron protagonistas absolutos.</p>
+      </div>
+      <div class="evento-item">
+        <div class="evento-eyebrow">Cariló &amp; Madariaga · Expo</div>
+        <div class="evento-title">Expo Mujer</div>
+        <p class="evento-text">Participamos con presencia en Cariló y General Madariaga. Con un stand propio, generamos un espacio de encuentro para compartir nuestros vinos y conectar con el público.</p>
+      </div>
+      <div class="evento-item">
+        <div class="evento-eyebrow">Buenos Aires · Wine</div>
+        <div class="evento-title">Wine Argentina – Palacio San Miguel</div>
+        <p class="evento-text">Fuimos parte de una experiencia que reunió al mundo del vino en un entorno elegante y de gran nivel, participando con stand propio en el Palacio San Miguel.</p>
+      </div>
+      <div class="evento-item evento-coming">
+        <div class="evento-eyebrow">Próximamente</div>
+        <div class="evento-title">Lo que viene</div>
+        <p class="evento-text">Seguimos creciendo y llevando nuestros vinos a nuevos escenarios. Nos esperan más eventos, nuevas experiencias y más encuentros donde el vino es el punto de conexión.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       DIFERENCIAL
+       ============================== -->
+  <section id="diferencial">
+    <div class="section-eyebrow reveal">Lo que nos define</div>
+    <h2 class="section-title reveal">Por qué Correa Grieco</h2>
+    <div class="diferencial__grid">
+      <div class="diferencial__item reveal">
+        <div class="diferencial__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 13V8"/>
+            <path d="M20 9c2.4-2.2 5.6-2 7 .4"/>
+            <circle cx="20" cy="15.6" r="2.3"/>
+            <circle cx="15.4" cy="19.6" r="2.3"/>
+            <circle cx="20" cy="19.6" r="2.3"/>
+            <circle cx="24.6" cy="19.6" r="2.3"/>
+            <circle cx="17.6" cy="23.8" r="2.3"/>
+            <circle cx="22.4" cy="23.8" r="2.3"/>
+            <circle cx="20" cy="28" r="2.3"/>
+          </svg>
+        </div>
+        <h3>Uvas propias</h3>
+        <p>Trabajamos con nuestros propios viñedos en Mendoza, controlando cada etapa del proceso desde la vid hasta la botella.</p>
+      </div>
+      <div class="diferencial__item reveal">
+        <div class="diferencial__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 9h13l-1.1 7.2a5.5 5.5 0 0 1-10.8 0L13.5 9z"/>
+            <path d="M20 22v8"/>
+            <path d="M14.5 30h11"/>
+          </svg>
+        </div>
+        <h3>Elaboración artesanal</h3>
+        <p>Vinos de autor en pequeñas partidas, donde cada botella refleja la personalidad única de cada variedad y cosecha.</p>
+      </div>
+      <div class="diferencial__item reveal">
+        <div class="diferencial__icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="14" width="15" height="8" rx="0.5"/>
+            <path d="M21 17h6l5 4v1H21z"/>
+            <circle cx="12" cy="25" r="2.4"/>
+            <circle cx="28" cy="25" r="2.4"/>
+          </svg>
+        </div>
+        <h3>Envío a todo el país</h3>
+        <p>Llevamos nuestros vinos hasta tu puerta. Embalaje especial para que lleguen en perfectas condiciones a cualquier punto de Argentina.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       TIENDA
+       ============================== -->
+  <section id="tienda">
+    <div class="tienda__header">
+      <div class="tienda__title">Nuestros Vinos</div>
+      <div class="tienda__rule"></div>
+      <div class="filters" id="fbar">
+        <button class="fbtn on" onclick="doFilter('all',this)">Todos</button>
+        <button class="fbtn" onclick="doFilter('blanco',this)">Blancos</button>
+        <button class="fbtn" onclick="doFilter('tinto',this)">Tintos</button>
+        <button class="fbtn" onclick="doFilter('jugo',this)">Sin Alcohol</button>
+      </div>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+    <div class="cart-box">
+      <div class="tienda__title" style="margin-bottom:6px">Tu Pedido</div>
+      <div class="tienda__rule"></div>
+      <div id="cartEl"><p class="cart-empty">Aún no seleccionaste ningún producto.</p></div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CONTACTO
+       ============================== -->
+  <section id="contacto">
+    <div class="contacto__info">
+      <div class="section-eyebrow reveal">Contacto</div>
+      <h2 class="reveal">Hablemos de<br>vino</h2>
+      <p class="reveal">¿Querés hacer un pedido especial, organizar una cata o simplemente saber más sobre nuestros vinos? Escribinos.</p>
+
+      <div class="contact-item reveal">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M3 5C3 4.4 3.4 4 4 4H16C16.6 4 17 4.4 17 5V15C17 15.6 16.6 16 16 16H4C3.4 16 3 15.6 3 15V5Z" stroke="rgba(201,168,76,0.7)" stroke-width="1" fill="none"/>
+          <path d="M3 5L10 11L17 5" stroke="rgba(201,168,76,0.7)" stroke-width="1" stroke-linecap="round" fill="none"/>
+        </svg>
+        <a href="mailto:info@correagrieco.com">info@correagrieco.com</a>
+      </div>
+
+      <div class="social-btns reveal">
+        <a class="wa-btn" href="https://wa.me/5491157819412" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8.5" stroke="#25d366" stroke-width="0.8"/><path d="M4.5 13.5L5.8 9.8C5.3 8.9 5 7.9 5 6.9C5 4.2 7.2 2 9.9 2C12.6 2 14.8 4.2 14.8 6.9C14.8 9.6 12.6 11.8 9.9 11.8C9 11.8 8.1 11.5 7.4 11.1L4.5 13.5Z" stroke="#25d366" stroke-width="0.8" fill="none"/></svg>
+          Consultar por WhatsApp
+        </a>
+        <a class="ig-btn" href="https://www.instagram.com/correagrieco_/" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2.5" y="2.5" width="13" height="13" rx="3.5" stroke="#e1306c" stroke-width="0.9" fill="none"/><circle cx="9" cy="9" r="3.2" stroke="#e1306c" stroke-width="0.9" fill="none"/><circle cx="13" cy="5" r="0.9" fill="#e1306c"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+
+    <form class="contacto-form reveal" id="contactForm">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre completo" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea rows="5" placeholder="¿En qué podemos ayudarte?"></textarea>
+      </div>
+      <button class="btn-submit" type="submit">Enviar mensaje →</button>
+    </form>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="footer">
+    <div class="footer__logo">Correa Grieco</div>
+    <div class="footer__center">
+      <a href="mailto:info@correagrieco.com">info@correagrieco.com</a>
+      <a href="https://wa.me/5491157819412" target="_blank" style="color:rgba(37,211,102,0.6)">WhatsApp</a>
+      <a href="https://www.instagram.com/correagrieco_/" target="_blank" style="color:rgba(225,48,108,0.6)">Instagram</a>
+    </div>
+    <div class="footer__right">© Correa Grieco<br>Todos los derechos reservados</div>
+  </footer>
+
+  <!-- ==============================
+       JS
+       ============================== -->
+  <script src="js/tienda.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

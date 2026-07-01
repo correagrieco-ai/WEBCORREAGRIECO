@@ -1,0 +1,11 @@
+# 🔒 Credenciales privadas — NUNCA subir
+config.php
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+*.log

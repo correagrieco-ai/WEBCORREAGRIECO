@@ -1,0 +1,153 @@
+/* ================================================
+   HEADER & NAVEGACIÓN
+   ================================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--gap-lg);
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--color-border);
+  transition: background var(--transition);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__logo img {
+  height: 44px;
+  width: auto;
+  filter: brightness(0.9);
+}
+
+.header__logo-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--color-white);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.header__nav {
+  display: flex;
+  gap: var(--gap-md);
+  align-items: center;
+}
+
+.header__nav a {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-grey);
+  position: relative;
+  transition: color var(--transition);
+}
+
+.header__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--transition);
+}
+
+.header__nav a:hover,
+.header__nav a.active {
+  color: var(--color-gold);
+}
+
+.header__nav a:hover::after,
+.header__nav a.active::after {
+  width: 100%;
+}
+
+/* Botón hamburguesa mobile */
+.header__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.header__burger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-white);
+  transition: all var(--transition);
+}
+
+/* Mobile nav overlay */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  transform: translateX(100%);
+  transition: transform var(--transition);
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-nav a {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-white);
+  font-style: italic;
+  transition: color var(--transition);
+}
+
+.mobile-nav a:hover {
+  color: var(--color-gold);
+}
+
+.mobile-nav__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--color-grey);
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+}
