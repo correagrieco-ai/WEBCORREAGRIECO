@@ -18,7 +18,7 @@ const IMG = {
 
 const prods = [
   {id:1, name:"Jugo de Uva 100% Natural", sub:"Sin alcohol", fmt:"6u.", prices:{500:20000,750:30000}, cat:"jugo", dot:"#6aab5e", img:IMG.jugo, consultar:false, sizes:true},
-  {id:2, name:"Cosecha Tardío Blanco", sub:"Vino Dulce Natural · Especial", fmt:"6u. × 750 cc", price:60000, cat:"blanco", dot:"#c9a96e", img:IMG.tardio, consultar:false},
+  {id:2, name:"Cosecha Tardío Blanco", sub:"Vino Dulce Natural · Especial", fmt:"6u. × 750 cc", price:30000, cat:"blanco", dot:"#c9a96e", img:IMG.tardio, consultar:false},
   {id:3, name:"Chardonnay", sub:"Serie Varietal · Blanco", fmt:"6u. × 750 cc", price:60000, cat:"blanco", dot:"#b5a460", img:IMG.chardonnay, consultar:false},
   {id:4, name:"Malbec", sub:"Serie Varietal · Tinto", fmt:"6u. × 750 cc", price:72000, cat:"tinto", dot:"#8b3a5a", img:IMG.malbec, consultar:false},
   {id:5, name:"Cabernet Franc", sub:"Serie Varietal · Tinto", fmt:"6u. × 750 cc", price:72000, cat:"tinto", dot:"#7a2535", img:IMG.cabfranc, consultar:false},
