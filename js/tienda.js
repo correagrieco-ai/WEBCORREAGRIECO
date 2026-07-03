@@ -27,8 +27,6 @@ const prods = [
   {id:8, name:"Ancellotta", sub:"Varietal · Tinto", fmt:"6u. × 750 cc", price:null, cat:"tinto", dot:"#7a3030", img:IMG.ancellotta, consultar:true},
   {id:9, name:"Freisa", sub:"Varietal · Tinto", fmt:"6u. × 750 cc", price:null, cat:"tinto", dot:"#6b5a3a", img:IMG.freisa, consultar:true},
   {id:10, name:"Tannat", sub:"Varietal · Tinto", fmt:"6u. × 750 cc", price:null, cat:"tinto", dot:"#4a1a28", img:IMG.tannat, consultar:true},
-  // ⚠️ PRODUCTO DE PRUEBA — eliminar después del test de pago
-  {id:99, name:"⚙ Producto de prueba", sub:"Test de pago · $1 · eliminar luego", fmt:"1 unidad", price:1, cat:"test", dot:"#c9a96e", img:IMG.malbec, consultar:false},
 ];
 
 
@@ -241,9 +239,7 @@ function updateTotalFinal() {
                    document.getElementById('f-tel')?.value &&
                    document.getElementById('f-dir')?.value &&
                    document.getElementById('f-cp')?.value;
-    // ⚠️ El producto de prueba (id 99) no exige cálculo de envío — permite testear el pago con solo $1
-    const modoPrueba = Object.keys(cart).some(k => k.startsWith('p99'));
-    mpBtn.disabled = !((cpValido || modoPrueba) && formOk);
+    mpBtn.disabled = !(cpValido && formOk);
   }
 }
 
@@ -298,7 +294,16 @@ async function pagarConMP() {
       body: JSON.stringify({
         items,
         payer: { name: nombre, email: email, phone: { number: tel } },
-        external_reference: `CG-${Date.now()}`
+        external_reference: `CG-${Date.now()}`,
+        order: {
+          nombre, email, tel, dir, cp, ciudad,
+          resumen: summary,
+          subtotal: tot,
+          iva: totIva - tot,
+          envio: shippingCost,
+          total: grand,
+          transporte: transportNombre
+        }
       })
     });
 
@@ -306,8 +311,7 @@ async function pagarConMP() {
 
     if (!prefData.init_point) throw new Error('No se pudo crear la preferencia');
 
-    // Enviar mail de confirmación con EmailJS
-    await enviarMails({ nombre, email, tel, dir, cp, ciudad, summary, grand, transportNombre, shippingCost, tot, totIva });
+    // Los mails de confirmación los envía el backend (crear-preferencia.php) desde la casilla de DonWeb.
 
     // Redirigir a Mercado Pago
     window.open(prefData.init_point, '_blank');

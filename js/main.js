@@ -69,15 +69,37 @@ if (evTrack) {
 // Formulario de contacto → mailto
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const nombre  = contactForm.querySelector('input[type="text"]').value  || '';
-    const email   = contactForm.querySelector('input[type="email"]').value || '';
-    const mensaje = contactForm.querySelector('textarea').value            || '';
-    const body    = encodeURIComponent(
-      'Nombre: ' + nombre + '\nEmail: ' + email + '\n\nMensaje:\n' + mensaje
-    );
-    window.location.href =
-      'mailto:info@correagrieco.com?subject=Consulta%20desde%20el%20sitio%20web&body=' + body;
+    const nombre  = contactForm.querySelector('input[type="text"]').value.trim();
+    const email   = contactForm.querySelector('input[type="email"]').value.trim();
+    const mensaje = contactForm.querySelector('textarea').value.trim();
+    const btn     = contactForm.querySelector('.btn-submit');
+
+    if (!nombre || !email || !mensaje) {
+      alert('Por favor completá todos los campos.');
+      return;
+    }
+
+    const textoOriginal = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const resp = await fetch('contacto.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, mensaje })
+      });
+      const data = await resp.json();
+      if (!data.ok) throw new Error('No enviado');
+      btn.textContent = '¡Mensaje enviado! ✓';
+      contactForm.reset();
+      setTimeout(() => { btn.disabled = false; btn.textContent = textoOriginal; }, 4000);
+    } catch (err) {
+      alert('No pudimos enviar el mensaje. Escribinos por WhatsApp o a info@correagrieco.com.');
+      btn.disabled = false;
+      btn.textContent = textoOriginal;
+    }
   });
 }
